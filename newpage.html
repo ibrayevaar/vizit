@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Аружан</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f0f1f4;
+      color: #1e1e1e;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #e6e8ec;
+      padding: 10px 40px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .logo span {
+      margin-left: 8px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    .theme-toggle {
+      border: 1.5px solid #000;
+      border-radius: 6px;
+      padding: 6px 10px;
+      cursor: pointer;
+      background-color: transparent;
+      transition: background-color 0.3s, color 0.3s, border 0.3s;
+    }
+
+    /* Контент */
+    main .container {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      padding: 60px 80px;
+    }
+
+    .profile-photo img {
+      width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .info h1 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .info p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .contact-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: 2px solid #007bff;
+      background-color: transparent;
+      color: #007bff;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .contact-btn:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #e6e8ec;
+      padding: 20px 40px;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+    }
+
+    .footer-logo img {
+      height: 28px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .footer-links a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer p {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    /* Темная тема */
+    body.dark-theme {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-theme .navbar {
+      background-color: #333;
+      border-bottom: 1px solid #555;
+    }
+
+    body.dark-theme footer {
+      background-color: #333; /* Темный фон футера */
+      color: #e0e0e0; /* Светлый цвет текста */
+    }
+
+    body.dark-theme .footer-links a {
+      color: #e0e0e0; /* Светлый цвет для ссылок */
+    }
+
+    body.dark-theme .footer-links a:hover {
+      color: #fff; /* Цвет ссылок при наведении */
+    }
+
+    body.dark-theme .menu a {
+      color: #e0e0e0;
+    }
+
+    body.dark-theme .menu a:hover {
+      color: #fff;
+    }
+
+    body.dark-theme .contact-btn {
+      border-color: #007bff;
+      color: #007bff;
+    }
+
+    body.dark-theme .contact-btn:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-photo img {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- Шапка -->
+    <nav class="navbar">
+      <div class="logo">
+        🎓 <span>Визитка</span>
+      </div>
+      <div class="menu">
+        <a href="index.html">Главная</a>
+        <a href="newpage.html">Аружан</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">🌙</button>
+    </nav>
+
+    <!-- Контент -->
+    <main>
+      <div class="container">
+        <div class="profile-photo">
+          <img src="images/aruzhan.jpeg" alt="Фото Аружан">
+        </div>
+        <div class="info">
+          <h1>Аружан</h1>
+          <p>Привет! Меня зовут Аружан — я студентка 2 курса направления «Информационные системы в управлении» в Kozybaev University.</p>
+          <p>Я обучаюсь на английском языке, мой уровень — минимум B2. Умею работать с HTML, CSS и JavaScript. Интересуюсь front-end разработкой и UI/UX-дизайном.</p>
+          <p>Также обладаю навыками работы в команде, умею планировать задачи и эффективно организовывать свою работу.</p>
+          <p>Буду рада практике и интересным проектам!</p>
+          <a class="contact-btn" href="#">Связаться со мной</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+      <div class="footer-container">
+        <a href="https://ku.edu.kz/?lang=ru" target="_blank" class="footer-logo">
+          <img src="images/logo.png" alt="Logo">
+          Kozybaev University
+        </a>
+        <div class="footer-links">
+          <a href="https://www.youtube.com/channel/UCfvyt7f6A-1znVNPvNVVEOg" target="_blank">YouTube</a>
+          <a href="https://www.instagram.com/kozybayevuniversity/" target="_blank">Instagram</a>
+          <a href="https://www.tiktok.com/@kozybayevuniversity" target="_blank">TikTok</a>
+          <a href="https://t.me/s/kozybayevuniversity" target="_blank">Telegram</a>
+        </div>
+      </div>
+      <hr>
+      <p>© 2025 Все права защищены.</p>
+    </footer>
+
+  </div>
+
+  <!-- Тема -->
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const body = document.body;
+
+    function setTheme(dark) {
+      if (dark) {
+        body.classList.add("dark-theme");
+        toggleBtn.textContent = "☀️"; // Смена иконки на солнце
+        localStorage.setItem("theme", "dark");
+      } else {
+        body.classList.remove("dark-theme");
+        toggleBtn.textContent = "🌙"; // Смена иконки на луну
+        localStorage.setItem("theme", "light");
+      }
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const isDark = body.classList.contains("dark-theme");
+      setTheme(!isDark);
+    });
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setTheme(true);
+    }
+  </script>
+
+</body>
+</html>
